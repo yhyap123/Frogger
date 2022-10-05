@@ -1,0 +1,152 @@
+<html>
+  <head>
+    <title>Frogger</title>
+    <style>
+      .frog {
+        fill: lime;
+      }
+      .car {
+        fill:lightcyan;
+      }
+      .log {
+        fill:sienna;
+      }
+      .croco {
+        fill:green;
+      }
+      .medal {
+        fill: gold;
+      }
+      .gameOverText {
+        font-family: sans-serif;
+        font-size: 80px;
+        fill:red;
+      }
+      .restartText {
+        font-family: sans-serif;
+        font-size: 30px;
+        fill:red;
+      }
+      .recordText {
+        font-size:25; 
+        fill: white;
+      }
+      .river {
+        fill:navy;
+      }
+      .safeArea {
+        fill: purple;
+      }
+      .wall {
+        fill:lightslategrey;
+      }
+      .hidden {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Frogger</h1>
+
+    <svg id="svgCanvas" width="600" height="600">
+      <text x="20" y="30" class="recordText">Move Up: 
+        <tspan id="moveUpCount">0</tspan>
+      </text>
+      <text x="200" y="30" class="recordText">Score: 
+        <tspan id="score">0</tspan>
+      </text>
+      <text x="350" y="30" class="recordText">Highest Score: 
+        <tspan id="highestScore">0</tspan>
+      </text>
+
+      <text id="gameOver" x="100" y="300" class="gameOverText hidden">Game Over
+        <tspan class="restartText" x="150" y="350">Press Enter to restart!</tspan>
+      </text>
+
+      <g id="background">
+        <rect class="wall" x="0" y="40" width="600" height="12" />
+        <rect class="wall" x="0" y="50" width="75" height="50" />
+        <rect class="wall" x="125" y="50" width="50" height="50" />
+        <rect class="wall" x="225" y="50" width="50" height="50" />
+        <rect class="wall" x="325" y="50" width="50" height="50" />
+        <rect class="wall" x="425" y="50" width="50" height="50" />
+        <rect class="wall" x="525" y="50" width="75" height="50" />
+        <rect class="safeArea" x="0" y="300" width="600" height="50" />
+        <rect class="safeArea" x="0" y="550" width="600" height="50" />
+        <rect class="river" x="0" y="100" width="600" height="200" />
+      </g>
+
+      <g id="foreground">
+        <circle id="frog0" class="frog" cx="300" cy="575" r="25" height="50" />
+        <circle id="frog1" class="frog hidden" cx="300" cy="575" r="25" height="50" />
+        <circle id="frog2" class="frog hidden" cx="300" cy="575" r="25" height="50" />
+        <circle id="frog3" class="frog hidden" cx="300" cy="575" r="25" height="50" />
+        <circle id="frog4" class="frog hidden" cx="300" cy="575" r="25" height="50" />
+      </g>
+
+    </svg>
+
+    <div>
+      <h2>Appearance:</h2>
+      <p>
+        1. Frog: Round shape and green colour.
+      </p>
+      <p>
+        2. Car: Square shape and light cyan colour.
+      <p>
+        3. Log: Rectangle shape and brown colour.
+      </p>
+      <p>
+        4. Medal: Round shape and gold colour.
+      </p>
+      <p>
+        5. River: Area with blue colour.
+      </p>
+      <p>
+        6. Safe zone: Area with purple colour.
+      </p>
+
+      <h2>Instruction:</h2>
+      <p>
+        1. You are required to score as many points as possible by moving the frog to get the medals located at the top.
+      </p>
+      <p>
+        2. Each medal will give 200 points and the position of the frog will be reset after getting the medal.
+      </p>
+      <p>
+        3. The total move up counts, scores obtained for each round and highest scores accumulated 
+        will be displayed at the top status bar.
+      </p>
+      <p>
+        4. How to move the frog: 
+      </p>
+      <p text-indent="50px">
+        Arrow Up key - Move Up
+      </p>
+      <p>
+        Arrow Down key - Move Down
+      </p>
+      <p>
+        Arrow Left key - Move Left
+      </p>
+      <p>
+        Arrow Right key - Move Right
+      </p>
+      <p>
+        5. IMPORTANT: The game is over when the frog dies. There are two conditions where it causes the frog dies.
+      </p>
+      <p>
+        5a. Collides with the cars.
+      </p>
+      <p>
+        5b. Falls into rivers.
+      </p>
+      <p>
+        6. Additional note: The objects will move faster after collecting all the five medals each time.
+      </p>
+      
+      <h2>Challange Yourself and Have Fun !!!</h2>
+    </div>
+  </body>
+</html>
